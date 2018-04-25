@@ -21,7 +21,16 @@ module.exports = {
         };
         return fetch(theMovies, options)
             .then(response => response.json());
+    },
+    editMovies: (id) => {
+        const theMovies = `/api/movies/${id}`;
+        const options = {
+            method: 'PUT',
+        };
+        return fetch(theMovies, options)
+            .then(response => response.json());
     }
 };
+
 
 
