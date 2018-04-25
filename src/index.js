@@ -34,20 +34,19 @@ $('#add-movie').click((e) => {
     addMovies({title, rating});
 
     const movieRow = movieDisplayer(title, rating);
-    $("tbody").append(movieRow)
+    $(".additionalMovie").append(movieRow)
 
 });
 
 $('.additionalMovie').on('click', '.deletebutton', (e)=>{
-    console.log("test");
     e.preventDefault();
     console.log($(e.target).data('id'));
     $(e.target).parent('h1').remove();
-    deleteMovies();
-
+    deleteMovies($(e.target).data('id'));
 
 
 });
+
 
 
 
