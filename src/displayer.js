@@ -1,3 +1,3 @@
 module.exports = (title, rating) =>{
-    return `<tr><td>${title}</td><td>${rating}</td></tr>`
+    return `<h1> ${title} - rating: ${rating}<button class="deletebutton">Delete</button></h1>`
 };
