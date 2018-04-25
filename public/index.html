@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>My Application</title>
     <link rel="stylesheet" href="/style.css"/>
 </head>
@@ -10,10 +10,21 @@
     <img class="loadimg" src="images/pacman.gif" alt="loading">
 </div>
 <div class="container">
-    <p>Add Movie: </p>
-        <input type="text" placeholder="Title">
-        <input type="text" placeholder="Rating">
+    <input type="text" id="title-movie" placeholder="Title">
+    <input type="text" id="rating-movie" placeholder="Rating">
+    <button type="button" id="add-movie">Add Movie</button>
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Rating</th>
+            <th>ID</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div class="additionalMovie"></div>
 </div>
-    <script src="/main.js"></script>
+<script src="/main.js"></script>
 </body>
 </html>
