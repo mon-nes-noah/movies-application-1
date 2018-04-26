@@ -17,7 +17,7 @@ getMovies().then((movies) => {
     movies.forEach(({title, rating, id}) => {
         console.log(`id#${id} - ${title} - rating: ${rating}`);
         document.querySelector('.additionalMovie').innerHTML +=
-            `<h1> ${title} - rating: ${rating}<button data-id="${id}" class="deletebutton">Delete</button><button class="editbutton" data-id="${id}">Edit</button></h1> `;
+            `<h3> ${title} <br> rating: ${rating}<br><button data-id="${id}" class="deletebutton">Delete</button><button class="editbutton" data-id="${id}">Edit</button></h3> `;
         $('.container').toggleClass("container");
         $('.loadimg').hide();
     });
@@ -43,7 +43,7 @@ $('#add-movie').click((e) => {
 $('.additionalMovie').on('click', '.deletebutton', (e)=>{
     e.preventDefault();
     console.log($(e.target).data('id'));
-    $(e.target).parent('h1').remove();
+    $(e.target).parent('h3').remove();
     deleteMovies($(e.target).data('id'));
 
 
@@ -62,8 +62,11 @@ $('.additionalMovie').on('click', '.editbutton', (e) =>{
     editMovies({id: id, title: title, rating: rating});
 
     const edit = editMovie(title, rating);
-    $(e.target).parent('h1').replaceWith(edit);
+    $(e.target).parent('h3').replaceWith(edit);
 });
+
+
+
 
 
 

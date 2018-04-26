@@ -12,12 +12,23 @@
     <img class="loadimg" src="images/pacman.gif" alt="loading">
 </div>
 <div class="container">
+<h2><center>Your Fave Movies</center></h2>
+    <div class="row">
     <input type="text" id="title-movie" placeholder="Title">
-    <input type="text" id="rating-movie" placeholder="Rating">
+    <!--<input type="text" id="rating-movie" placeholder="Rating">-->
+        <select name="" id="rating-movie">
+            <option value="">Rating</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
     <button type="button" id="add-movie">Add Movie</button>
-    <button type="button" id="edit-movie">Submit edit</button>
-    <div class="additionalMovie"></div>
+    <!--<button type="button" id="edit-movie">Submit edit</button>-->
+    </div>
 </div>
+<div class="additionalMovie"></div>
 <script src="/main.js"></script>
 </body>
 </html>

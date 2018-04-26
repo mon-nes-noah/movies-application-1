@@ -2,6 +2,52 @@ html, body {
     height: 100%;
 }
 
+body{
+    background-color: white;
+
+}
+
+body::after{
+    content: "";
+    /*background: url("images/Movie Popcorn.G03.2k.png");*/
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-size: 100%;
+    background-repeat: repeat;
+}
+
+h3 {
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    color: white;
+    border-radius: 5%;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+h2 {
+    height: 100px;
+    background-color: black;
+    color: white;
+    font-family: , sans-serif;
+    margin: 0;
+    font-size: xx-large;
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*margin-right: -50%;*/
+    /*transform: translate(-50%, -50%) }*/
+
+}
+
 .container {
     /*position: relative;*/
     /*top: 50%;*/
@@ -18,4 +64,37 @@ html, body {
 }
 .container{
     display:none;
+   width: 250px;
+    margin: auto;
+
+}
+
+.additionalMovie {
+    margin: auto;
+    width: 800px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 50px;
+}
+
+.row {
+    margin: auto;
+    width: 310px;
+}
+
+input {
+    margin: 20px;
+    width: 250px;
+    height: 30px;
+    border-radius: 5%;
+}
+
+button{
+    width: 100px;
+    height: 25px;
+    border-radius: 5%;
+    background-color: white;
+    color: black;
+    margin: 5px;
 }
