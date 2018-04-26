@@ -49,6 +49,11 @@ $('.additionalMovie').on('click', '.deletebutton', (e)=>{
 
 });
 
+$('#edit-movie').click((e) => {
+    e.preventDefault();
+
+    console.log('test')
+});
 
 
 $('.additionalMovie').on('click', '.editbutton', (e) =>{
