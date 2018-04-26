@@ -22,14 +22,20 @@ module.exports = {
         return fetch(theMovies, options)
             .then(response => response.json());
     },
-    editMovies: (id) => {
-        const theMovies = `/api/movies/${id}`;
+
+    editMovies: (movie) => {
+        const theMovies = `/api/movies/${movie.id}`;
         const options = {
             method: 'PUT',
+            body: JSON.stringify(movie),
+            headers: {'Content-Type': 'application/json'}
         };
+        console.log(movie.id);
         return fetch(theMovies, options)
             .then(response => response.json());
+
     }
+
 };
 
 

@@ -7,7 +7,7 @@
 /**
  * require style imports
  */
-const {getMovies, addMovies, deleteMovies} = require('./api.js');
+const {getMovies, addMovies, deleteMovies, editMovies} = require('./api.js');
 const $ = require('jquery');
 const movieDisplayer = require('./displayer.js');
 const editMovie = require('./editmovie.js');
@@ -17,7 +17,7 @@ getMovies().then((movies) => {
     movies.forEach(({title, rating, id}) => {
         console.log(`id#${id} - ${title} - rating: ${rating}`);
         document.querySelector('.additionalMovie').innerHTML +=
-            `<h1> ${title} - rating: ${rating}<button data-id="${id}" class="deletebutton">Delete</button><button class="editbutton">Edit</button></h1> `;
+            `<h1> ${title} - rating: ${rating}<button data-id="${id}" class="deletebutton">Delete</button><button class="editbutton" data-id="${id}">Edit</button></h1> `;
         $('.container').toggleClass("container");
         $('.loadimg').hide();
     });
@@ -49,13 +49,20 @@ $('.additionalMovie').on('click', '.deletebutton', (e)=>{
 
 });
 
-$('.additionalMovie').on('click', '.editbutton', (e)=>{
+
+
+$('.additionalMovie').on('click', '.editbutton', (e) =>{
     console.log('hello');
     e.preventDefault();
-    editMovie($(e.target).data('id'));
+    // const movie = editMovie(title, rating);
+    const id = $(e.target).data('id');
+    const title = $('#title-movie').val();
+    const rating = $('#rating-movie').val();
 
+    editMovies({id: id, title: title, rating: rating});
 
-
+    const edit = editMovie(title, rating);
+    $(e.target).parent('h1').replaceWith(edit);
 });
 
 
