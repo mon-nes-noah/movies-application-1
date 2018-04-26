@@ -6,19 +6,14 @@
       "id": 1
     },
     {
-      "id": 2,
-      "title": "",
-      "rating": ""
+      "title": "El Rey Leon",
+      "rating": "3",
+      "id": 2
     },
     {
-      "id": 15,
-      "title": "hello",
-      "rating": "2"
-    },
-    {
-      "title": "hgrhr",
-      "rating": "2",
-      "id": 16
+      "title": "The little mermaid",
+      "rating": "5",
+      "id": 3
     }
   ]
 }
