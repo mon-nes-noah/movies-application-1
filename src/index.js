@@ -32,8 +32,11 @@ $('#add-movie').click((e) => {
     console.log('test');
     const title = $('#title-movie').val();
     const rating = $('#rating-movie').val();
+    location.reload();
 
     addMovies({title, rating});
+
+
 
     const movieRow = movieDisplayer(title, rating);
     $(".additionalMovie").append(movieRow)
@@ -49,6 +52,11 @@ $('.additionalMovie').on('click', '.deletebutton', (e)=>{
 
 });
 
+$('#edit-movie').click((e) => {
+    e.preventDefault();
+
+    console.log('test')
+});
 
 
 $('.additionalMovie').on('click', '.editbutton', (e) =>{
