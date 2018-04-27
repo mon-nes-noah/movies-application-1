@@ -17,10 +17,10 @@ const editMovie = require('./editmovie.js');
 
 getMovies().then((movies) => {
     console.log('Here are all the movies:');
-    movies.forEach(({title, rating, id}) => {
+    movies.forEach(({title, rating, genre, id}) => {
         console.log(`id#${id} - ${title} - rating: ${rating}`);
         document.querySelector('.additionalMovie').innerHTML +=
-            `<h3> ${title} <br> Rating: ${rating}<br><button data-id="${id}" class="deletebutton">Delete</button><button class="editbutton" data-id="${id}">Edit</button></h3> `;
+            `<h3> ${title} <br> Rating: ${rating}<br> Genre: ${genre} <br> <button data-id="${id}" class="deletebutton">Delete</button><button class="editbutton" data-id="${id}">Edit</button></h3> `;
         $('.container').toggleClass("container");
         $('.loadimg').hide();
     });
@@ -51,10 +51,11 @@ $('#add-movie').click((e) => {
     console.log('test');
     const title = $('#title-movie').val();
     const rating = $('#rating-movie').val();
+    const genre = $('#genre-movie').val();
     // location.reload();
 
-    addMovies({title, rating}).then(movie => {
-        const movieRow = movieDisplayer(movie.title, movie.rating, movie.id);
+    addMovies({title, rating, genre}).then(movie => {
+        const movieRow = movieDisplayer(movie.title, movie.rating,movie.genre, movie.id);
         $(".additionalMovie").append(movieRow)
     });
 
@@ -101,11 +102,12 @@ $('.additionalMovie').on('click', '.editbutton', e => {
     e.preventDefault();
     const id = $(e.target).data('id');
     const title = prompt("Ingresa tu edicion");
+    const genre = prompt("What genre is the movie?")
     const rating = prompt("Ingresa tu nuevo rating");
 
-    editMovies({id: id, title: title, rating: rating}).then(movie => {
+    editMovies({id: id, title: title, rating: rating, genre: genre}).then(movie => {
         // addMovies();
-        const edit = editMovie(movie.title, movie.rating, movie.id);
+        const edit = editMovie(movie.title, movie.rating, movie.genre, movie.id);
         $(e.target).parent('h3').replaceWith(edit);
     });
 
