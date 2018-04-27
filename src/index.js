@@ -29,6 +29,20 @@ getMovies().then((movies) => {
     console.log(error);
 });
 
+  //   getMovies().then((movies) => {
+  //       console.log('Here are all the movies:');
+  //       movies.forEach(({title, rating, id}) => {
+  //           console.log(`id#${id} - ${title} - rating: ${rating}`);
+  //           document.querySelector('.additionalMovie').innerHTML +=
+  //               `<div class='col-sm border border-dark rounded'><h3>${title}</h3><p class="card-text"> Rating: ${rating}</p><button data-id="${id}" class="deletebutton">Delete</button><button class="editbutton" data-id="${id}">Edit</button></div>`;
+  // <!--<img class="card-img-top" src="..." alt="Card image cap">-->
+  //           $('.container').toggleClass("container");
+  //           $('.loadimg').hide();
+  //       });
+  //   }).catch((error) => {
+  //       alert('Oh no! Something went wrong.\nCheck the console for details.')
+  //       console.log(error);
+  //   });
 
 // ============ FUNCTION TO ADD MOVIES ==========================
 
@@ -43,8 +57,6 @@ $('#add-movie').click((e) => {
         const movieRow = movieDisplayer(movie.title, movie.rating, movie.id);
         $(".additionalMovie").append(movieRow)
     });
-
-
 
 });
 
