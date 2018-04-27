@@ -9,6 +9,7 @@
  */
 
 
+
 const {getMovies, addMovies, deleteMovies, editMovies} = require('./api.js');
 const $ = require('jquery');
 const movieDisplayer = require('./displayer.js');
@@ -19,7 +20,7 @@ getMovies().then((movies) => {
     movies.forEach(({title, rating, id}) => {
         console.log(`id#${id} - ${title} - rating: ${rating}`);
         document.querySelector('.additionalMovie').innerHTML +=
-            `<h3> ${title} <br> rating: ${rating}<br><button data-id="${id}" class="deletebutton">Delete</button><button class="editbutton" data-id="${id}">Edit</button></h3> `;
+            `<h3> ${title} <br> Rating: ${rating}<br><button data-id="${id}" class="deletebutton">Delete</button><button class="editbutton" data-id="${id}">Edit</button></h3> `;
         $('.container').toggleClass("container");
         $('.loadimg').hide();
     });
