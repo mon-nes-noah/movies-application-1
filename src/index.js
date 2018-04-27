@@ -44,8 +44,6 @@ $('#add-movie').click((e) => {
         $(".additionalMovie").append(movieRow)
     });
 
-
-
 });
 
 
