@@ -1,6 +1,10 @@
 html, body {
     height: 100%;
 }
+@font-face {
+    font-family: 'noodle';
+    src: url("../fonts/noodle.ttf");
+}
 
 body{
     background-color: white;
@@ -9,7 +13,7 @@ body{
 
 body::after{
     content: "";
-    /*background: url("images/Movie Popcorn.G03.2k.png");*/
+    background: url("images/bowl-filled-with-popcorns-for-movie-night-with-PDFGJQG.jpg");
     opacity: 0.7;
     top: 0;
     left: 0;
@@ -34,12 +38,12 @@ h3 {
 }
 
 h2 {
+    font-family: 'Fjalla One', sans-serif;
     height: 100px;
-    background-color: black;
-    color: white;
-    font-family: , sans-serif;
-    margin: 0;
-    font-size: xx-large;
+    /*background-color: black;*/
+    color: black;
+    margin-top: 20px;
+    font-size: 96px;
     /*position: absolute;*/
     /*top: 50%;*/
     /*left: 50%;*/
@@ -80,15 +84,15 @@ h2 {
 
 .row {
     margin: auto;
-    width: 310px;
+    width: 500px;
 }
 
-input {
-    margin: 20px;
-    width: 250px;
-    height: 30px;
-    border-radius: 5%;
-}
+/*input {*/
+    /*margin: 20px;*/
+    /*width: 250px;*/
+    /*height: 30px;*/
+    /*border-radius: 5%;*/
+/*}*/
 
 button{
     width: 100px;
@@ -98,4 +102,3 @@ button{
     color: black;
     margin: 5px;
 }
-

@@ -11,9 +11,9 @@
       "id": 24
     },
     {
-      "title": "test 1",
-      "rating": "1",
-      "id": 31
+      "id": 31,
+      "title": null,
+      "rating": null
     },
     {
       "id": 32,
