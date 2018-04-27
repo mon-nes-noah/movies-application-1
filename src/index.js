@@ -7,6 +7,8 @@
 /**
  * require style imports
  */
+
+
 const {getMovies, addMovies, deleteMovies, editMovies} = require('./api.js');
 const $ = require('jquery');
 const movieDisplayer = require('./displayer.js');
@@ -27,12 +29,14 @@ getMovies().then((movies) => {
 });
 
 
+// ============ FUNCTION TO ADD MOVIES ==========================
+
 $('#add-movie').click((e) => {
     e.preventDefault();
     console.log('test');
     const title = $('#title-movie').val();
     const rating = $('#rating-movie').val();
-    location.reload();
+    // location.reload();
 
     addMovies({title, rating});
 
@@ -43,6 +47,9 @@ $('#add-movie').click((e) => {
 
 });
 
+
+// ============== FUNCTION TO DELETE MOVIES ====================
+
 $('.additionalMovie').on('click', '.deletebutton', (e)=>{
     e.preventDefault();
     console.log($(e.target).data('id'));
@@ -52,30 +59,44 @@ $('.additionalMovie').on('click', '.deletebutton', (e)=>{
 
 });
 
-$('#edit-movie').click((e) => {
+// $('#edit-movie').click((e) => {
+//     e.preventDefault();
+//
+//     console.log('test')
+// });
+//
+//
+// $('.additionalMovie').on('click', '.editbutton', (e) =>{
+//     console.log('hello');
+//     e.preventDefault();
+//     // const movie = editMovie(title, rating);
+//     const id = $(e.target).data('id');
+//     const title = $('#title-movie').val();
+//     const rating = $('#rating-movie').val();
+//
+//     editMovies({id: id, title: title, rating: rating});
+//
+//     const edit = editMovie(title, rating);
+//     $(e.target).parent('#display').replaceWith(edit);
+// });
+
+
+// ================= FUNCTION TO EDIT MOVIES ===================
+
+
+$('.additionalMovie').on('click', '.editbutton', e => {
     e.preventDefault();
+    const id = $(e.target).data('id');
+    const title = prompt("Ingresa tu edicion");
+    const rating = prompt("Ingresa tu nuevo rating");
+
+    editMovies({id: id, title: title, rating: rating});
+    // addMovies();
+    const edit = editMovie(title, rating);
+    $(e.target).parent('h3').replaceWith(edit);
 
     console.log('test')
 });
-
-
-$('.additionalMovie').on('click', '.editbutton', (e) =>{
-    console.log('hello');
-    e.preventDefault();
-    // const movie = editMovie(title, rating);
-    const id = $(e.target).data('id');
-    const title = $('#title-movie').val();
-    const rating = $('#rating-movie').val();
-
-    editMovies({id: id, title: title, rating: rating});
-
-    const edit = editMovie(title, rating);
-    $(e.target).parent('h3').replaceWith(edit);
-});
-
-
-
-
 
 
 
