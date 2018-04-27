@@ -1,44 +1,9 @@
 {
   "movies": [
     {
-      "id": 13,
-      "title": "supewoman",
-      "rating": "4"
-    },
-    {
       "id": 15,
       "title": "SUPER WOMAN",
       "rating": "5"
-    },
-    {
-      "title": "MERMAID",
-      "rating": "4",
-      "id": 18
-    },
-    {
-      "id": 19,
-      "title": "TEST",
-      "rating": "2"
-    },
-    {
-      "title": "TEST",
-      "rating": "2",
-      "id": 20
-    },
-    {
-      "title": "DASGA",
-      "rating": "1",
-      "id": 21
-    },
-    {
-      "title": "HULU",
-      "rating": "2",
-      "id": 22
-    },
-    {
-      "title": "MULAN",
-      "rating": "2",
-      "id": 23
     },
     {
       "title": "HERCULES",
@@ -46,9 +11,14 @@
       "id": 24
     },
     {
-      "title": "HERCULES",
-      "rating": "3",
-      "id": 25
+      "title": "test 1",
+      "rating": "1",
+      "id": 31
+    },
+    {
+      "id": 32,
+      "title": "scary movie II",
+      "rating": "2"
     }
   ]
 }

@@ -60,7 +60,7 @@ h2 {
     width: 200px;
     position: absolute;
     top: 15em;
-    left: 35em;
+    left: 40em;
 }
 .container{
     display:none;
@@ -99,6 +99,3 @@ button{
     margin: 5px;
 }
 
-prompt {
-
-}

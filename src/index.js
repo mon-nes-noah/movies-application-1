@@ -38,12 +38,12 @@ $('#add-movie').click((e) => {
     const rating = $('#rating-movie').val();
     // location.reload();
 
-    addMovies({title, rating});
+    addMovies({title, rating}).then(movie => {
+        const movieRow = movieDisplayer(movie.title, movie.rating, movie.id);
+        $(".additionalMovie").append(movieRow)
+    });
 
 
-
-    const movieRow = movieDisplayer(title, rating);
-    $(".additionalMovie").append(movieRow)
 
 });
 
@@ -90,10 +90,11 @@ $('.additionalMovie').on('click', '.editbutton', e => {
     const title = prompt("Ingresa tu edicion");
     const rating = prompt("Ingresa tu nuevo rating");
 
-    editMovies({id: id, title: title, rating: rating});
-    // addMovies();
-    const edit = editMovie(title, rating);
-    $(e.target).parent('h3').replaceWith(edit);
+    editMovies({id: id, title: title, rating: rating}).then(movie => {
+        // addMovies();
+        const edit = editMovie(movie.title, movie.rating, movie.id);
+        $(e.target).parent('h3').replaceWith(edit);
+    });
 
     console.log('test')
 });
